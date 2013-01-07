@@ -3,6 +3,10 @@ MergeFS
 
 A windows utility that allows you to mount two or more drives under the same virtual drive such that they appear to be one, larger file system containing the union of the files and directories on the original drives.
 
+License
+=======
+Please see LICENSE.txt before using this source in any way (for example, before distributing, modifying and compiling/executing it).
+
 Dependencies
 ============
 This depends on:
