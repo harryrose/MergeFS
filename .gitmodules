@@ -1,0 +1,3 @@
+[submodule "DokanNet"]
+	path = DokanNet
+	url = git@github.com:harryrose/DokanNet.git
