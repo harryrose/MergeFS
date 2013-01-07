@@ -6,9 +6,9 @@ A windows utility that allows you to mount two or more drives under the same vir
 Dependencies
 ============
 This depends on:
-    .NET runtime
-    the Dokan library, which can be obtained from http://dokan-dev.net
-    the Dokan .NET bindings (avaialble as a submodule to this repo) or from the above link.
+    * .NET 4 +
+    * the Dokan library, which can be obtained from http://dokan-dev.net
+    * the Dokan .NET bindings (avaialble as a submodule to this repo) or from the above link.
 
 Project Files
 =============
