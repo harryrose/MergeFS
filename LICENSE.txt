@@ -1,0 +1,21 @@
+Please credit me in any derivative works (I don't mind where, just a 
+mention in the license agreement is fine).  Do what you like with this 
+code but do so under the following caution:
+
+DISCLAIMER:
+This software (i.e. the MergeFS source and/or program) is provided as-is, without 
+any warranty, implied or otherwise.  The software is provided in good faith, and while I,
+Harry Rose, have checked it for bugs, I make no claims as to having found them all,
+and furthermore, bugs that I have already found might not yet have been fixed.
+
+Due to the fact that this software manipulates files on disk, there is a real risk
+that a bug might cause loss of data.  Consequently, the user is advised to thoroughly
+test the software on a system in which such data loss is inconsequential.  Even then,
+use of this software is done so AT THE USER'S OWN RISK.
+
+You have been warned ;-)
+
+LESS SCARY:
+I do actually run this software on my home computer, I even test `unstable' versions 
+of the code on it.  Although, this isn't a guarantee that the software won't break 
+something :-P
