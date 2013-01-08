@@ -35,10 +35,14 @@ namespace MergeFS
             mfs = new MergedFileSystem(this,roots);
 
             DokanOptions opt = new DokanOptions();
-            opt.DebugMode = true;
+            opt.DebugMode = false;
+          
             opt.MountPoint = driveLetter+":\\";
             opt.ThreadCount = 5;
-            opt.VolumeLabel = "Goats";
+            opt.VolumeLabel = "MergeFS";
+            opt.RemovableDrive = false;
+            opt.NetworkDrive = false;
+
             int status = DokanNet.DokanMain(opt, mfs);
             switch (status)
             {

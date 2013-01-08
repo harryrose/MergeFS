@@ -12,6 +12,7 @@ namespace MergeFS
     {
        // Logger logger;
 
+
         RootCollection mergedDirs;
 
         public MergedFileSystem(Logger logger, IEnumerable<Root> roots)
@@ -24,16 +25,18 @@ namespace MergeFS
         {
             try
             {
-
+                Console.WriteLine("Create File "+filename+" access "+access+" share "+share+" mode "+mode+ " options "+options+" info "+info);
                 Root root = mergedDirs.getRootWithBestSpace(0);
 
-            
+                
 
                 if ((mode == FileMode.Create || mode == FileMode.CreateNew || mode == FileMode.OpenOrCreate )&& !root.ContainsDirectory(Path.GetDirectoryName(filename)))
                 {
 
                     root.mkDirs(Path.GetDirectoryName(filename));
                 }
+
+               
 
                 if (Directory.Exists(root.getRealPath(filename)))
                 {
@@ -55,7 +58,7 @@ namespace MergeFS
 
         public int OpenDirectory(string filename, DokanFileInfo info)
         {
-            
+            Console.WriteLine("Open Directory " + filename + " info " + info);
             try
             {
             
@@ -64,6 +67,8 @@ namespace MergeFS
                     mergedDirs.mkDirs(filename);
                 }
 
+                info.IsDirectory = true;
+                
                 return 0;
             }
             catch (Exception e)
@@ -75,7 +80,7 @@ namespace MergeFS
 
         public int CreateDirectory(string filename, DokanFileInfo info)
         {
-            //Console.WriteLine("Create Directory " + filename);
+            Console.WriteLine("Create Directory " + filename);
             try
             {
              //   logger.addLog("CreateDirectory '" + filename + "'");
@@ -170,7 +175,7 @@ namespace MergeFS
 
         public int GetFileInformation(string filename, FileInformation fileinfo, DokanFileInfo info)
         {
-            //Console.WriteLine("Get File Info");
+            Console.WriteLine("Get File Info");
             try
             {
              //   logger.addLog("GetFileInformation '" + filename + "'");
@@ -227,6 +232,8 @@ namespace MergeFS
                         fi.LastWriteTime = f.LastWriteTime;
                         fi.Length = (f is DirectoryInfo) ? 0 : ((FileInfo)f).Length;
                         fi.FileName = f.Name;
+                        
+                        //fi.Attributes.HasFlag(FileAttributes.ReadOnly);
                         files.Add(fi);
                     }
                     return 0;
